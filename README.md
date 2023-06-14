@@ -34,7 +34,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Link
 
-Google colab file can be found [here](https://colab.research.google.com/drive/1WcH2wByaTdqhBhX4kHz1BNFI7J_QAV3o "Link to Colab File")
+Google colab file can be found [here](https://colab.research.google.com/drive/1WcH2wByaTdqhBhX4kHz1BNFI7J_QAV3o "Link to Colab file")
 
 ## Acknowledgments
 
