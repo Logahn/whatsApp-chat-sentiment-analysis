@@ -12,23 +12,40 @@ from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 
 """## Definition of Functions"""
 
-# Date-Time extraction
 
+import re
 
-def date_time(s):
-    pattern = '^([0-9]+)(\/)([0-9]+)(\/)([0-9]+), ([0-9]+):([0-9]+)[ ]?(AM|PM|am|pm)? -'
-    result = re.match(pattern, s)
-    if result:
-        return True
-    else:
-        return False
+def date_time(date_string: str) -> bool:
+    """
+    Validates if a string is a valid date and time format.
+
+    Args:
+        date_string (str): The string to be validated.
+
+    Returns:
+        bool: True if the string is a valid date and time format, False otherwise.
+    """
+    # The regular expression pattern to match against the date string
+    pattern = r'^([0-9]+)(\/)([0-9]+)(\/)([0-9]+), ([0-9]+):([0-9]+)[ ]?(AM|PM|am|pm)? -'
+
+    # Attempt to match the pattern against the date string
+    match = re.match(pattern, date_string)
+
+    # Return True if there was a match, False otherwise
+    return bool(match)
 
 # Contact extraction
 
 
-def find_contact(s):
-    s = s.split(":")
-    if len(s) == 2:
+def find_contact(string: str) -> bool:
+    """
+    This function takes a string as input and returns True if the string has exactly one colon (':') character, otherwise False.
+    """
+    # Split the string by colon (':') character
+    split_string = string.split(":")
+    
+    # Check if the string has exactly one colon
+    if len(split_string) == 2:
         return True
     else:
         return False
